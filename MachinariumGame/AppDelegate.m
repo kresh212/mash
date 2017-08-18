@@ -7,6 +7,8 @@
 //
 
 #import "AppDelegate.h"
+#import "ADFiledViewController.h"
+#import "ADMainScreenViewController.h"
 
 @interface AppDelegate ()
 
@@ -17,6 +19,19 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    ADMainScreenViewController *vc = [[ADMainScreenViewController alloc] init];
+//    vc.order = 5;
+//    vc.limitBlocks = 2;
+//    vc.countFields = 20;
+    vc.view.backgroundColor = [UIColor whiteColor];
+    
+    UIWindow *window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    [window setRootViewController:vc];
+    [window makeKeyAndVisible];
+    
+    self.window = window;
+    
     return YES;
 }
 
